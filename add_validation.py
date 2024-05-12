@@ -1,4 +1,4 @@
-from database.admin_functions import create_connection
+from admin_functions import create_connection
 
 
 # add validation in to db

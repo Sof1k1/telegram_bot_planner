@@ -6,19 +6,20 @@ from telebot import types
 import threading
 import time
 
-from database.admin_functions import create_connection, get_all_validations
+from admin_functions import create_connection, get_all_validations, execute_run_once_sql
 from datetime import datetime, timedelta
 
-from database.standart_functions.add_validation import add_validation_for_user
-from database.standart_functions.delete_validation import delete_validation_by_id
-from database.standart_functions.get_validation import get_all_validations_user, get_validations_by_user_id, \
+from add_validation import add_validation_for_user
+from delete_validation import delete_validation_by_id
+from get_validation import get_all_validations_user, get_validations_by_user_id, \
     get_validations_for_days
-from database.standart_functions.modificate_validation import update_validation_name, update_validation_datetime, \
+from modificate_validation import update_validation_name, update_validation_datetime, \
     update_validation_description
 
 config = configparser.ConfigParser()
 config.read('config_bot.ini')
-bot_token = config['telegram']['token']
+# bot_token = config['telegram']['token']
+bot_token = '7169742380:AAHzOCoCsjSaFgZpuorl4sm166Cir9omEjM'
 print(bot_token)
 
 bot = telebot.TeleBot(bot_token)
@@ -367,5 +368,6 @@ def create_single_notification_thread(task_id, date_time_str, task_name, user_id
 
 
 if __name__ == "__main__":
+    execute_run_once_sql()
     create_notifications_threads()
     bot.polling(none_stop=True)

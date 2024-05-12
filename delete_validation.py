@@ -1,4 +1,4 @@
-from database.admin_functions import create_connection
+from admin_functions import create_connection
 
 
 def delete_validation_by_id(validation_id, user_id):

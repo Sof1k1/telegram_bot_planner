@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from database.admin_functions import create_connection
+from admin_functions import create_connection
 
 
 # update name for validation

@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 
-from database.admin_functions import create_connection
+from admin_functions import create_connection
 
 
 # get validations for next N days for user

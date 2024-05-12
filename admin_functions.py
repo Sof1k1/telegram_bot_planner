@@ -6,7 +6,6 @@ import configparser
 config = configparser.ConfigParser()
 
 config.read('config_bot.ini')
-
 db_user = config['database']['db_user']
 db_password = config['database']['db_password']
 db_name = config['database']['db_name']
@@ -22,7 +21,9 @@ def create_connection():
     connection = psycopg2.connect(
         dbname=db_name,
         user=db_user,
-        password=db_password
+        password=db_password,
+        host='postgres',
+        port='5432'
     )
     cursor = connection.cursor()
     return connection, cursor
@@ -30,6 +31,7 @@ def create_connection():
 
 # run once script for initial table
 def execute_run_once_sql():
+    print('Executing run_once_sql')
     try:
         with open(run_once_filename, 'r') as file:
             sql_commands = file.read()
@@ -70,3 +72,4 @@ def get_all_validations():
     except Exception as e:
         print("Error fetching validations:", e)
         return None
+
