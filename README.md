@@ -15,3 +15,10 @@
 ![jhen25p1RDs](https://github.com/Sof1k1/telegram_bot_planner/assets/122202595/d9235ab6-f1bb-49af-9aa5-eebc0cc4a4ac)
 ![RR4Ll4MV_4w](https://github.com/Sof1k1/telegram_bot_planner/assets/122202595/5fda91b5-a9fc-4d58-a555-b50ac2ebd636)
 
+Описание запуска системы:
+1.Клонирование проекта
+  git clone https://github.com/Sof1k1/telegram_bot_planner.git
+2. Перейти в каталог
+  cd telegram-bot-planner
+3. Запуск
+  docker-compose up -d
